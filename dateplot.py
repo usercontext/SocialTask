@@ -12,7 +12,7 @@ data = data[0]
 
 d = defaultdict(int)
 for word in data:
-    d[word[:7]] += 1
+    d[word] += 1
 
 df = pd.DataFrame.from_dict(d, orient='index')
 df = df.rename(index=str, columns={0: "freq"})
@@ -21,5 +21,5 @@ df = df.sort_index(ascending=False)
 # print(df.head())
 # df.plot()
 # plt.show(block=True)
-df.to_csv('freq.csv')
+df.to_csv('freqdates.csv')
 
